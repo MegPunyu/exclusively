@@ -2,7 +2,7 @@
 Exclusively is a simple class that provides methods for executing async functions exclusively.
 
 ## Features
-Calls fetch() or other async functions exclusively
+Calls `fetch()` or other async functions exclusively.
 
 ## Installation
 ```shell
@@ -69,9 +69,11 @@ const context = Exclusively.getContext("sample");  // same object as "const cont
 context.fetch("https://example.com/");
 ```
 
-### Multiple contexts
+### multiple contexts
 ```javascript
 import { Exclusively } from "exclusively";
+
+const request = new Request("https://example.com/");
 
 const context1 = new Exclusively();
 const context2 = new Exclusively();
@@ -83,4 +85,18 @@ context1.fetch(request);  //     |----|
 context2.fetch(request);  //      |--|
 context1.fetch(request);  //          |----|
 context2.fetch(request);  //         |----|
+```
+
+## globalThis.fetch
+`Exclusively.prototype.fetch()` calls `globalThis.fetch()` internally. The Fetch API has been available by default since Node.js 18, but for earlier versions, globalThis.fetch() must be defined in some way. One of the ways is to install [node-fetch](https://www.npmjs.com/package/node-fetch).
+```shell
+npm install node-fetch
+```
+
+Then, import `fetch()` and set it as a member of `globalThis`.
+```javascript
+import fetch from "node-fetch";
+import { Exclusively } from "exclusively";
+
+globalThis.fetch = fetch;
 ```

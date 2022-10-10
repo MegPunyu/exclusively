@@ -42,6 +42,6 @@ export class Exclusively {
 
     /* fetch exclusively */
     public async fetch(...args: Parameters<typeof fetch>): Promise<Response> {
-        return this.exec<Response>(() => fetch(...args));
+        return this.exec<Response>(() => globalThis.fetch(...args));
     }
 }

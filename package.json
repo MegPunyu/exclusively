@@ -1,7 +1,7 @@
 {
   "name": "exclusively",
-  "version": "2.0.0",
-  "description": "Calls fetch() or other async functions exclusively",
+  "version": "3.0.0",
+  "description": "Calls fetch() or other async functions exclusively.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
