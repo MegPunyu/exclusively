@@ -1,0 +1,30 @@
+{
+  "name": "exclusively",
+  "version": "2.0.0",
+  "description": "Calls fetch() or other async functions exclusively",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegPunyu/exclusively.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MegPunyu/exclusively/issues"
+  },
+  "homepage": "https://github.com/MegPunyu/exclusively#readme",
+  "keywords": [
+    "fetch",
+    "async",
+    "exclusively"
+  ],
+  "author": "MegPunyu",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
