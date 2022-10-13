@@ -12,7 +12,7 @@ npm install exclusively
 ## Usage
 ### fetch resources sequentially
 ```javascript
-import { Exclusively } from "exclusively";
+import Exclusively from "exclusively";
 
 const request = new Request("https://example.com/");
 
@@ -35,7 +35,7 @@ context.fetch(request);  //           |----|
 
 ### call async functions sequentially
 ```javascript
-import { Exclusively } from "exclusively";
+import Exclusively from "exclusively";
 
 const wait3s = async () => new Promise(resolve => setTimeout(() => {
     console.log("3s");
@@ -54,7 +54,7 @@ context.exec(wait3s);  //         |---|
 ### share "Exclusively" instance among multiple script files
 #### sample1.js
 ```javascript
-import { Exclusively } from "exclusively";
+import Exclusively from "exclusively";
 
 const context = Exclusively.getContext("sample");  // get context named "sample" (if it does not exist, it will be created)
 
@@ -62,7 +62,7 @@ context.fetch("https://example.com/");
 ```
 #### sample2.js
 ```javascript
-import { Exclusively } from "exclusively";
+import Exclusively from "exclusively";
 
 const context = Exclusively.getContext("sample");  // same object as "const context" in sample1.js
 
@@ -71,7 +71,7 @@ context.fetch("https://example.com/");
 
 ### multiple contexts
 ```javascript
-import { Exclusively } from "exclusively";
+import Exclusively from "exclusively";
 
 const request = new Request("https://example.com/");
 
@@ -96,7 +96,7 @@ npm install node-fetch
 Then, import `fetch()` and set it as a member of `globalThis`.
 ```javascript
 import fetch from "node-fetch";
-import { Exclusively } from "exclusively";
+import Exclusively from "exclusively";
 
 globalThis.fetch = fetch;
 ```
