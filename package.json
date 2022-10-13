@@ -26,9 +26,9 @@
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint src/**/*.ts"
   },
   "type": "module",
   "types": "dist/index.d.ts",
-  "version": "3.0.1"
+  "version": "3.0.2"
 }
